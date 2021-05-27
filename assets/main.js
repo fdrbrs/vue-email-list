@@ -1,9 +1,16 @@
 const app = new Vue ({
     el: '#app',
     data: {
-        emails: []
+        emails: [],
+        styleObject: {
+            visibility: 'visible'
+        }
     },
-    methods: {},
+    methods: {
+        uncover(){
+            this.styleObject.visibility = "hidden"
+        }
+    },
     mounted(){
         for (let i = 0; i < 10; i++) {
             axios
@@ -16,6 +23,7 @@ const app = new Vue ({
             
         }
         console.log(this.emails);
+        setTimeout(this.uncover,1000)
     }
 })
 

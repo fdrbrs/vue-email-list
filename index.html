@@ -5,6 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue Email List</title>
+    <style>
+        #cover{
+            position: fixed;
+            height: 100%;
+            width: 100%;
+            top:0;
+            left: 0;
+            background:#ffff;
+            z-index:9999;
+            padding-left: 5rem;
+            padding-top: 5rem;
+            font-size: 3rem;
+        }
+    </style>
 </head>
 <body>
 
@@ -13,7 +27,9 @@
         <ol>
             <li v-for="email in emails">{{email}}</li>
         </ol>
+        <div id="cover" :style="styleObject">LOADING Email List...</div>
     </div>
+
     
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
     <!-- CDN AXIOS -->
